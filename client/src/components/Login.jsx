@@ -45,20 +45,21 @@ const Login = () => {
                             <a href="#">Forgot Password</a>
                             <a href="#">Signup</a>
                         </div>
-                        <br />
                         <div className="inputBox">
                             <input type="submit" value="Login" />
                         </div>
-                        <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}>
-                            <GoogleLogin
-                                clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}
-                                buttonText="Login with Google"
-                                onSuccess={reponseGoogle}
-                                onFailure={(err) => console.log(err)}
-                                cookiePolicy={"single_host_origin"}
-                                responseType="code,token"
-                            />
-                        </GoogleOAuthProvider>
+                        <div className='googleLogin'>
+                            <GoogleOAuthProvider clientId="198986909043-pempbbiro201sr7gviauqr3cg16is8a0.apps.googleusercontent.com">
+                                <GoogleLogin
+                                    clientId="198986909043-pempbbiro201sr7gviauqr3cg16is8a0.apps.googleusercontent.com"
+                                    buttonText="Login with Google"
+                                    onSuccess={reponseGoogle}
+                                    onFailure={(err) => console.log(err)}
+                                    cookiePolicy={"single_host_origin"}
+                                    responseType="code,token"
+                                />
+                            </GoogleOAuthProvider>
+                        </div>
                     </div>
                 </div>
             </div>

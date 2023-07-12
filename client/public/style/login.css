@@ -173,3 +173,20 @@ input[type="submit"]:active {
         height: calc(20vw - 2px);
     }
 }
+
+.googleLogin:first-child {
+    display: block;
+}
+
+.googleLogin span {
+    all: unset;
+}
+
+.googleLogin span:hover {
+    background-color: #fff;
+}
+
+.googleLogin span#button-label {
+    display: none;
+    width: 0px;
+}
