@@ -1,11 +1,11 @@
 import React from 'react';
 import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 import jwt_decode from "jwt-decode";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import "../../public/style/login.css";
 
-const Login = () => {
+const Signin = () => {
     const navigate = useNavigate();
 
     const reponseGoogle = (response) => {
@@ -31,7 +31,7 @@ const Login = () => {
         <div className='box'>
             <div className="signin">
                 <div className="content">
-                    <h2>Log In</h2>
+                    <h2>Sign In</h2>
                     <div className="form">
                         <div className="inputBox">
                             <input type="text" required />
@@ -41,12 +41,9 @@ const Login = () => {
                             <input type="password" required />
                             <i>Password</i>
                         </div>
-                        <div className="links">
-                            <a href="#">Forgot Password</a>
-                            {/* <a href="#">Sign in</a> */}
-                            <Link to="/Signin">
-                                Sign in
-                            </Link>
+                        <div className="inputBox">
+                            <input type="password" required />
+                            <i>Comfirm Password</i>
                         </div>
                         <div className="inputBox">
                             <input type="submit" value="Submit" />
@@ -70,4 +67,4 @@ const Login = () => {
     )
 };
 
-export default Login;
+export default Signin;

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import { Navbar, Welcome, Footer, Services, Transactions, Login } from "./components";
+import { Navbar, Welcome, Footer, Services, Transactions, Login, Signin } from "./components";
 import { fetchUser } from './utils/fetchUser'
 
 const HomePage = () => (
@@ -22,6 +22,8 @@ const App = () => {
       <Routes>
         <Route path='/' element={<HomePage />}></Route>
         <Route path='/Login' element={<Login />}></Route>
+        <Route path='/Signin' element={<Signin />}></Route>
+        <Route path='/History' element={<Transactions />}></Route>
       </Routes>
     </Router>
   )
