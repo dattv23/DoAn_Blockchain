@@ -3,9 +3,9 @@ import React, { useContext } from "react";
 import { Navbar, Footer } from "./index";
 import { TransactionContext } from "../context/TransactionContext";
 
-import useFetch from "../hooks/useFetch";
 import dummyData from "../utils/dummyData";
 import { shortenAddress } from "../utils/shortenAddress";
+import useFetch from "../hooks/useFetch";
 
 const TransactionsCard = ({ addressTo, addressFrom, timestamp, message, keyword, amount, url }) => {
     const gifUrl = useFetch({ keyword });

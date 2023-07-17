@@ -51,7 +51,7 @@ export const TransactionProvider = ({ children }) => {
             if (accounts.length) {
                 setCurrentAccount(accounts[0]);
 
-                getAllTransactions();
+                // getAllTransactions();
             } else {
                 console.log('No accounts found');
             }

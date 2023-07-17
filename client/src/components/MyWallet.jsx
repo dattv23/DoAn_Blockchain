@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { Navbar, Footer } from "./index";
+import { TransactionContext } from '../context/TransactionContext';
 
 const MyWallet = () => {
+    const { currentAccount } = useContext(TransactionContext);
     const user = JSON.parse(localStorage.getItem('user'));
 
     return (
@@ -17,7 +19,7 @@ const MyWallet = () => {
                         <img src={user.picture} alt="Avatar" className="w-32 h-32 rounded-full mb-4" />
                         <p className="text-lg">Name: {user.name}</p>
                         <p className="text-lg">Email: {user.email}</p>
-                        <p className="text-lg">Address: {user.address}</p>
+                        <p className="text-lg">Address Wallet: {currentAccount}</p>
                     </div>
                 )}
             </div>
