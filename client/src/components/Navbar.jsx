@@ -1,33 +1,65 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { HiMenuAlt4 } from 'react-icons/hi';
 import { AiOutlineClose } from 'react-icons/ai';
 import { Router, Routes, Route, useNavigate, Link } from 'react-router-dom';
+import { googleLogout } from '@react-oauth/google';
 
 import logo from '../../images/logo.png';
 
 const NavbarItem = ({ title, classProps }) => {
+    const navigate = useNavigate();
+
+    const handleItemClick = () => {
+        navigate(`/${title.toLowerCase().replace(" ", "")}`);
+    };
+
     return (
-        <Link to={title} className={`mx-4 cursor-pointer ${classProps}`}>
+        <div
+            onClick={handleItemClick}
+            className={`mx-4 cursor-pointer ${classProps}`}
+        >
             {title}
-        </Link>
+        </div>
     );
 }
 
 const Navbar = () => {
     const [toggleMenu, setToggleMenu] = useState(false);
+    const [isLogined, setIsLogined] = useState(false);
+
+    useEffect(() => {
+        const user = localStorage.getItem('user');
+        setIsLogined(!!user);
+    }, []);
 
     return (
         <nav className="w-full flex md:justify-center justify-between items-center p-4">
             <div className='md:flex-[0.5] flex-initial justify-center items-center'>
-                <img src={logo} alt="logo" className='w-32 cursor-pointer' />
+                <a href="/"><img src={logo} alt="logo" className='w-32 cursor-pointer' /></a>
             </div>
             <ul className='text-white md:flex hidden list-none flex-row justify-between items-center flex-initial'>
                 {["My Wallet", "History"].map((item, index) =>
                     <NavbarItem key={item + index} title={item} />
                 )}
-                <Link to="/Login" className='bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]'>
-                    Login
-                </Link>
+                {!isLogined ? (
+                    <Link
+                        to="/Login"
+                        className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]"
+                    >
+                        Login
+                    </Link>
+                ) : (
+                    <button
+                        onClick={() => {
+                            localStorage.removeItem('user');
+                            googleLogout();
+                            setIsLogined(false);
+                        }}
+                        className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]"
+                    >
+                        Logout
+                    </button>
+                )}
             </ul>
             <div className="flex relative">
                 {toggleMenu
