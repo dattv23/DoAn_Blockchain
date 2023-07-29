@@ -1,9 +1,9 @@
 import React from 'react';
 import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 import jwt_decode from "jwt-decode";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-import "../../public/style/login.css";
+import "../../public/style.css";
 
 const clientId = "914585896754-jpioum9hv1nuvhp3n09amjh2d5d9n80i.apps.googleusercontent.com";
 

@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { Navbar, Welcome, Footer, Services, Transactions, Login, MyWallet } from "./components";
-import { fetchUser } from './utils/fetchUser';
 
 const HomePage = () => (
   <div className="min-h-screen">
