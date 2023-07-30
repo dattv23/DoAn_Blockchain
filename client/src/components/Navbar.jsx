@@ -10,7 +10,12 @@ const NavbarItem = ({ title, classProps }) => {
   const navigate = useNavigate();
 
   const handleItemClick = () => {
-    navigate(`/${title.toLowerCase().replace(" ", "")}`);
+    const formatTitle = title.toLowerCase().replace(" ", "");
+    if ((formatTitle === "history" || formatTitle === "mywallet") && (localStorage.getItem('user') == null)) {
+      alert("Please login!");
+    } else {
+      navigate(`/${formatTitle}`);
+    }
   };
 
   return (
