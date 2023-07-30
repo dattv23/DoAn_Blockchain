@@ -7,3 +7,4 @@ B2: Nhập lệnh sau ở cửa sổ terminal: cd client
 B3: Nhập lệnh: npm install (để tải các package)
 ![image](https://github.com/soiiicodon/DoAn_Blockchain/assets/94770505/5419a2ab-1a94-4b9e-becf-02016a16ab5b)
 B4: Chạy trên localhost: npm run dev
+![image](https://github.com/soiiicodon/DoAn_Blockchain/assets/94770505/d17d3de6-7ee6-4ba0-b169-7ba9cc55c3d3)
