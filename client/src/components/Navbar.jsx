@@ -4,7 +4,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { useNavigate, Link } from 'react-router-dom';
 import { googleLogout } from '@react-oauth/google';
 
-import logo from "../../images/logo.png";
+import logo from "../../images/logoNoBackground.png";
 
 const NavbarItem = ({ title, classProps }) => {
   const navigate = useNavigate();
